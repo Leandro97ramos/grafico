@@ -7,7 +7,7 @@
     var slidersMonthTwo = document.getElementById("slider-month-2");
     var displayMonthValOne = document.getElementById("range-month-1");
     var displayMonthValTwo = document.getElementById("range-month-2");
-    var minGap = 2;
+    var minGap = 1;
     var month = ['ene','feb', 'mar','abr','may','jun','jul','ago','sep','oct','nov','dic']
     let sliderMaxValue = document.getElementById("slider-month-1").max;
     
@@ -63,9 +63,8 @@ function fillColor(){
 
 function sliderYearOne(){
   let value = slidersYearOne.value;
-  let totalElementos = ((value - (value-1)) *2);
-  let porcentaje = (slidersYearOne.value /totalElementos );
-  console.log(value - totalElementos /2);
+  let totalElementos = (value) - 1920;
+  console.log(totalElementos);
 if(parseInt(slidersYearTwo.value) - parseInt(slidersYearOne.value) < minGap){
   slidersYearOne.value = parseInt(slidersYearTwo.value) - minGap;
 
