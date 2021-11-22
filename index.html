@@ -97,19 +97,36 @@
                 <div class ="inputDiv i1"></div>
                 <div class="wrapper">
                     <div class="values">
-                      <span id="range1">
-                          0
-                      </span>
+                   
                       <span> &dash;</span>
-                      <span id="range2">
-                        12
-                    </span>
+
                     </div>
                   <div class="container">
                     <div class="slider-track"></div>
-                    <input type="range" min="0" max="12" value="3" id="slider-1" oninput="SliderCalendarOne()" >
-                    <input type="range" min="0" max="12" value="12" id="slider-2" oninput="SliderCalendarTwo()">
+                      <span id="range-month-1" class="range1 month">
+                        ene
+                      </span>
+                      <input type="range" class="range month" min="0" max="12" value="0" id="slider-month-1" oninput="sliderMonthOne()" >
+                      <input type="range" class="range month" min="0" max="12" value="12" id="slider-month-2" oninput="sliderMonthTwo()">
+                      <span id="range-month-2" class="range2 month">
+                        dic
+                      </span>  
                     </div>
+                    
+                  </div>
+                  <div class="container">
+                      <div class="slider-track"></div>
+                      <span id="range-year-1" class="range1 year">
+                        0
+                      </span>
+
+                      <input type="range" class="range year" min="1920" max="2021" value="1920" id="slider-year-1" oninput="sliderYearOne()" >
+                      <input type="range" class="range year" min="1920" max="2021" value="2021" id="slider-year-2" oninput="sliderYearTwo()">
+                      <span id="range-year-2" class="range2 year">
+                        12
+                      </span>  
+                      
+                  </div>
                 </div>
                 <div class ="inputDiv i2"></div>
 
@@ -125,7 +142,7 @@
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-  <script src="./scripts/range.js"></script>
   <script src="./scripts/main.js"></script>
+  <script src="./scripts/range.js"></script>
 
 </body></html>

@@ -15034,7 +15034,6 @@ ul {
 .container{
   position: relative;
   width: 100%;
-  height: 100px;
   border: 1px solid black;
   margin-top: 30px;
 }
@@ -15045,7 +15044,7 @@ input[type="range"]{
   width: 100%;
   outline: none;
   position: absolute;
-  margin: auto;
+  margin: 0;
   top: 0;
   bottom: 0;
   background-color: transparent;
@@ -15118,8 +15117,14 @@ input[type="range"]:active::-webkit-slider-thumb{
   border: 3px solid #333;
 }
 
+.range{
+  appearance: none;
+  
+  background-color: #012;
+  border-radius: 25px;
+}
 .values{
-  background-color: #333;
+  /*background-color: #333;
   width: 32%;
   position: relative;
   margin: auto;
@@ -15128,10 +15133,17 @@ input[type="range"]:active::-webkit-slider-thumb{
   text-align: center;
   font-weight: 500;
   font-size: 25px;
-  color: #d5d5d5;
+  color: #d5d5d5;*/
+}
+.container .range1,.range2{
+  position: absolute;
+  bottom: 16px;
+}
+.range2.month, .range2.year{
+  right: 0px;
 }
 .values:before{
-  content: "";
+ /* content: "";
   position: absolute;
   height: 0;
   width: 0;
@@ -15141,7 +15153,7 @@ input[type="range"]:active::-webkit-slider-thumb{
   margin: auto;
   bottom: -14px;
   left: 0;
-  right: 0;
+  right: 0;*/
 }
 
 /*# sourceMappingURL=main.css.map */
