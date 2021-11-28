@@ -1,13 +1,28 @@
 'use strict'
 
-
+var contPost = document.getElementsByClassName("contenedor-tapas");
+//console.log(contPost);
     
+window.addEventListener("resize", function(event){
+  let labels = document.getElementsByClassName("subrayado-amarillo tapa");
+  let bLabl = 70;
+ // console.log(labels);
+  console.log(document.body.clientHeight);
+  for (let i = 0; i < labels.length; i++) {
+    let post = labels[i];
+    
+    
+    console.log(post.style.left);
+  }
+
+
+})
     //variable para filtro de meses
     var slidersMonthOne = document.getElementById("slider-month-1");
     var slidersMonthTwo = document.getElementById("slider-month-2");
     var displayMonthValOne = document.getElementById("range-month-1");
     var displayMonthValTwo = document.getElementById("range-month-2");
-    var minGap = 1;
+    var minGap = 0;
     var month = ['ene','feb', 'mar','abr','may','jun','jul','ago','sep','oct','nov','dic']
     let sliderMaxValue = document.getElementById("slider-month-1").max;
     
@@ -16,6 +31,11 @@
     var slidersYearTwo = document.getElementById("slider-year-2");
     var displayYearValOne = document.getElementById("range-year-1");
     var displayYearValTwo = document.getElementById("range-year-2");
+    
+
+    
+
+    
     
 
     function sliderMonthOne(){
@@ -29,7 +49,6 @@
       }
 
   
-     // fillColor();
     }
     
     function sliderMonthTwo(){
@@ -47,23 +66,18 @@
       }
       
 
- // fillColor();
 
 }
 
-function fillColor(){
-    let percent1 =(slidersYearOne.value/ sliderMaxValue * 12);
-    let percent2 =(slidersYearTwo.value/ sliderMaxValue * 12);
 
-    console.log(percent1,percent2);
-
-}
 
 
 
 function sliderYearOne(){
   let value = slidersYearOne.value;
-  let totalElementos = (value) - 1920;
+  let baseFiltro = parseInt(document.getElementById("slider-year-1").min);
+
+  let totalElementos = (value) - baseFiltro;
   console.log(totalElementos);
 if(parseInt(slidersYearTwo.value) - parseInt(slidersYearOne.value) < minGap){
   slidersYearOne.value = parseInt(slidersYearTwo.value) - minGap;
@@ -74,34 +88,25 @@ if(parseInt(slidersYearTwo.value) - parseInt(slidersYearOne.value) < minGap){
   
   console.log(slidersYearOne.value);
 }
-fillColor();
 }
 
 function sliderYearTwo(){
 let value = slidersYearTwo.value;
-
-let diferencia = 11 - (value-1);
+let maxValFiltro = parseInt(document.getElementById("slider-year-1").max);
+let totalElementos = maxValFiltro -   value ;
 
 if(parseInt(slidersYearTwo.value) - parseInt(slidersYearOne.value) < minGap){
   slidersYearTwo.value = parseInt(slidersYearOne.value) + minGap;
 }else{
   console.log(slidersYearTwo.value);
-  displayYearValTwo.style.right = (diferencia *7.5) + "%";
+  displayYearValTwo.style.right = (totalElementos * 0.9) + "%";
   displayYearValTwo.textContent = value;
 
-  console.log("diferencia: " + diferencia + " resultado: " +(diferencia*5.8));
+
+}
+
 }
 
 
-fillColor();
 
-}
-/*
-function fillColor(){
-  let percent1 =(slidersYearOne.value/ sliderMaxValue * 12);
-  let percent2 =(slidersYearTwo.value/ sliderMaxValue * 12);
 
-  console.log(percent1,percent2);
-
-}
-*/
